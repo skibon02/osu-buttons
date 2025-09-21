@@ -1,0 +1,22 @@
+[package]
+name = "osu-buttons"
+version = "0.1.0"
+edition = "2024"
+
+[profile.release]
+debug = true
+panic="abort"
+
+[[bin]]
+name = "osu-buttons"
+bench = false
+test = false
+
+[dependencies]
+cortex-m = { version = "0.7.7", features = ["inline-asm", "critical-section-single-core"] }
+cortex-m-rt = { version = "0.7.5", features = ["device"] }
+defmt = "1.0.1"
+defmt-rtt = "1.0.0"
+embedded-alloc = "0.6.0"
+panic-probe = { version = "1.0.0", features = ["print-defmt"] }
+stm32f1 = { version = "0.16.0", features = ["stm32f103"] }
